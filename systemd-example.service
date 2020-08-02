@@ -1,0 +1,19 @@
+[Unit]
+Description=Valkyrja template Discord bot
+After=network.target
+
+[Service]
+User=project
+Group=project
+Type=simple
+Environment=VALKYRJA_PATH="/home/project/valkyrja"
+ExecStartPre=/usr/bin/dotnet build ${VALKYRJA_PATH}/Valkyrja.template.sln -o ${VALKYRJA_PATH}/bin/Release
+ExecStart=/usr/bin/dotnet ${VALKYRJA_PATH}/bin/Release/Valkyrja.template.dll 
+WorkingDirectory=/home/project/valkyrja/bin/Release
+TimeoutStopSec=10
+Restart=always
+RestartSec=5
+SyslogIdentifier=Valkyrja
+
+[Install]
+WantedBy=multi-user.target
