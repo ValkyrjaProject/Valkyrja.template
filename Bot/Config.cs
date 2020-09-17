@@ -2,7 +2,7 @@ using System;
 
 using guid = System.UInt64;
 
-namespace Valkyrja.modmail
+namespace Valkyrja.template
 {
 	public class Config: Valkyrja.entities.BaseConfig
 	{

@@ -4,10 +4,9 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Valkyrja.coreLite;
 using Valkyrja.entities;
-using Valkyrja.modules;
 using guid = System.UInt64;
 
-namespace Valkyrja.modmail
+namespace Valkyrja.template
 {
 	class Program
 	{

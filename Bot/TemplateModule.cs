@@ -12,18 +12,18 @@ using Discord.Rest;
 using Discord.WebSocket;
 using guid = System.UInt64;
 
-namespace Valkyrja.modules
+namespace Valkyrja.template
 {
 	public class TemplateModule: IModule
 	{
-		private IValkyrjaClient Client;
+		private ValkyrjaClient<Config> Client;
 
 		public Func<Exception, string, guid, Task> HandleException{ get; set; }
 		public bool DoUpdate{ get; set; } = true;
 
 		public List<Command> Init(IValkyrjaClient iClient)
 		{
-			this.Client = iClient as ValkyrjaClient<BaseConfig>;
+			this.Client = iClient as ValkyrjaClient<Config>;
 			List<Command> commands = new List<Command>();
 
 // !exampleCommand
